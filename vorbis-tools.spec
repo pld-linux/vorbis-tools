@@ -10,6 +10,7 @@ License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
+Patch1:		%{name}-amfix.patch
 URL:		http://www.xiph.org/vorbis/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -42,13 +43,14 @@ de alta qualidade.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
 %{__libtoolize}
 aclocal
 %{__autoconf}
-%{__automake} || :
+%{__automake}
 %configure
 %{__make}
 
