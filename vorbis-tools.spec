@@ -9,6 +9,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
+# Source0-md5:	c0a9fee54835e9c5b32d1f42c02964c9
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-amfix.patch
 Patch2:		%{name}-nolibnsl.patch
