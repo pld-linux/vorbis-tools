@@ -13,6 +13,7 @@ Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Source0:	http://www.vorbis.com/files/rc2/unix/%{name}-%{version}.tar.gz
+Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.xiph.org/vorbis/index.html
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -41,14 +42,15 @@ layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-#rm -f missing
-#libtoolize --copy --force
-#aclocal
-#autoconf
-#automake -a -c
-%configure2_13
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
+%configure
 %{__make}
 
 %install
