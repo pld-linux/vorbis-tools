@@ -1,0 +1,87 @@
+--- vorbis-tools-1.0rc3/configure.in~	Tue Jan  8 23:52:38 2002
++++ vorbis-tools-1.0rc3/configure.in	Tue Jan  8 23:52:38 2002
+@@ -11,11 +11,7 @@
+ dnl Check for programs
+ dnl --------------------------------------------------  
+ 
+-dnl save $CFLAGS since AC_PROG_CC likes to insert "-g -O2"
+-dnl if $CFLAGS is blank
+-cflags_save="$CFLAGS"
+ AC_PROG_CC
+-CFLAGS="$cflags_save"
+ 
+ AM_PROG_LIBTOOL
+ 
+@@ -26,55 +22,6 @@
+ 
+ AC_CANONICAL_HOST
+ 
+-casecflags_save="$CFLAGS"
+-ldflags_save="$LDFLAGS"
+-if test -z "$GCC"; then
+-        case $host in
+-        *-*-irix*)
+-                DEBUG="-g -signed"
+-                CFLAGS="-O2 -w -signed"
+-                PROFILE="-p -g3 -O2 -signed"
+-                ;;
+-        sparc-sun-solaris*)
+-                DEBUG="-v -g"
+-                CFLAGS="-xO4 -fast -w -fsimple -native -xcg92"
+-                PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc"
+-                ;;
+-        *)
+-                DEBUG="-g"
+-                CFLAGS="-O"
+-                PROFILE="-g -p"
+-                ;;
+-        esac
+-else
+-        case $host in
+-        *-*-linux*)
+-                DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O20 -ffast-math -fsigned-char"
+-                PROFILE="-Wall -W -pg -g -O20 -ffast-math -fsigned-char"
+-                ;;
+-        sparc-sun-*)
+-                DEBUG="-g -Wall -fsigned-char -mv8"
+-                CFLAGS="-O20 -ffast-math -fsigned-char -mv8"
+-                PROFILE="-pg -g -O20 -fsigned-char -mv8"
+-                ;;
+-        *-*-darwin*)
+-                DEBUG="-fno-common -g -Wall -fsigned-char"
+-                CFLAGS="-fno-common -O4 -Wall -fsigned-char -ffast-math"
+-                PROFILE="-fno-common -O4 -Wall -pg -g -fsigned-char -ffast-math"
+-                ;;
+-        *)
+-                DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O20 -fsigned-char"
+-                PROFILE="-O20 -g -pg -fsigned-char"
+-                ;;
+-        esac
+-fi
+-CFLAGS="$CFLAGS $cflags_save"
+-DEBUG="$DEBUG $cflags_save"
+-PROFILE="$PROFILE $cflags_save"
+-LDFLAGS="$LDFLAGS $ldflags_save"
+-
+ dnl --------------------------------------------------
+ dnl Check for libraries
+ dnl --------------------------------------------------
+@@ -124,4 +71,15 @@
+ AC_SUBST(CURL_CFLAGS)
+ AC_SUBST(CURL_LIBS)
+ 
+-AC_OUTPUT(Makefile include/Makefile share/Makefile win32/Makefile oggenc/Makefile oggenc/man/Makefile ogg123/Makefile vorbiscomment/Makefile vcut/Makefile ogginfo/Makefile debian/Makefile)
++AC_OUTPUT([
++	Makefile
++	include/Makefile
++	share/Makefile
++	oggenc/Makefile
++	oggenc/man/Makefile
++	ogg123/Makefile
++	vorbiscomment/Makefile
++	vcut/Makefile
++	ogginfo/Makefile
++	debian/Makefile
++])
