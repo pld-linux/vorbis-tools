@@ -4,7 +4,7 @@ Summary(pl):	Narzêdzia do obs³ugi plików w formacie Ogg Vorbis
 Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.0.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Libraries
