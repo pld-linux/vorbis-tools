@@ -41,7 +41,7 @@ layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
 %setup -q
 
 %build
-rm missing
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
