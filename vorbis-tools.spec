@@ -1,8 +1,8 @@
 Summary:	The OGG Vorbis lossy audio compression codec
 Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Name:		vorbis-tools
-Version:	1.0rc1
-Release:	7
+Version:	1.0rc2
+Release:	1
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
