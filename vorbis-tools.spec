@@ -2,20 +2,24 @@ Summary:	The OGG Vorbis lossy audio compression codec
 Summary(pl):	Codec do stratnej kompresji d╪wiЙku Vorbis OGG
 Name:		vorbis-tools
 Version:	1.0rc1
-Release:	1
+Release:	6
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 URL:		http://www.xiph.org/vorbis/index.html
 Source0:	http://www.vorbis.com/files/rc1/unix/%{name}-%{version}.tar.gz
-BuildRequires:	libvorbis-devel
-BuildRequires:	libogg-devel
-BuildRequires:	libao-devel
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	libao-devel
+BuildRequires:	libogg-devel
 BuildRequires:	libtool
+BuildRequires:	libvorbis-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description 
