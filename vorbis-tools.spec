@@ -4,7 +4,7 @@ Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.0rc3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
@@ -23,7 +23,7 @@ BuildRequires:	curl-devel
 BuildRequires:	libao-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel
+BuildRequires:	libvorbis-devel = %{version}
 BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
