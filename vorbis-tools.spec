@@ -1,7 +1,5 @@
-Summary:	The OGG Vorbis lossy audio compression codec
-Summary(es):	Utensilios Ogg Vorbis
-Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
-Summary(pt_BR):	Ferramentas Ogg Vorbis
+Summary:	The Ogg Vorbis Tools
+Summary(pl):	Narzêdzia do obs³ugi plików w formacie Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.0
 Release:	1
@@ -23,29 +21,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
 
 %description
-Ogg Vorbis is a fully Open, non-proprietary, patent-and-royalty-free,
+Ogg Vorbis is a fully open, non-proprietary, patent-and-royalty-free,
 general-purpose compressed audio format for high quality
-(44.1-48.0kHz, 16+ bit, polyphonic) audio and music at fixed and
-variable bitrates from 16 to 128 kbps/channel. This places Vorbis in
-the same class as audio representations including MPEG-1 audio layer
-3, MPEG-4 audio (AAC and TwinVQ), and PAC.
+audio. This package contains various tools for Ogg Vorbis files
+such as command line encoder, decoder, player, etc.
 
 %description -l pl
-Ogg Vorbis to wysokiej jako¶ci (44.1-48.0kHz, 16+ bit, polifonia),
-kompresowalny format audio przy sta³ej i zmiennej bitrate od 16 do 128
-kbps/kana³. To umieszcza Vorbisa w tej samej klasie co MPEG-1 audio
-layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
-
-%description -l pt_BR
-Ogg Vorbis e' um formato de áudio aberto de propósito geral,
-não-proprietário e isento de patentes e royalties, para áudio e musica
-de alta qualidade.
-
-Este pacote contem as seguintes ferramentas Vorbis: oggenc, o encoder
-Ogg Vorbis; ogg123, reprodutor de áudio de linha de comando;
-vorbiscomment, um editor de comentários para arquivos Ogg Vorbis;
-ogginfo, mostra as informações de arquivos Ogg Vorbis; e vcut, que
-permite dividir arquivos Ogg Vorbis.
+Ogg Vorbis jest otwartym, niezale¿nym oraz wolnym od odp³at i patentów
+formatem ogólnego przeznaczenia dla plików d¼wiêkowych wysokiej jako¶ci.
+Pakiet zawiera ró¿ne narzêdzia do obs³ugi plików w tym formacie, np.:
+kompresor, dekompresor, odtwarzacz, itp.
 
 %prep
 %setup -q
@@ -56,7 +41,7 @@ rm -f missing
 %{__libtoolize}
 aclocal
 %{__autoconf}
-%{__automake}
+%{__automake} || :
 %configure
 %{__make}
 
@@ -66,13 +51,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
