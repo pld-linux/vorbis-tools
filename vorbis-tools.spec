@@ -1,16 +1,15 @@
-%define	vrc	rc1
 Summary:	The OGG Vorbis lossy audio compression codec
 Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Name:		vorbis-tools
-Version:	1.0
-Release:	0.%{vrc}
+Version:	1.0rc1
+Release:	1
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 URL:		http://www.xiph.org/vorbis/index.html
-Source0:	http://www.vorbis.com/files/rc1/unix/%{name}-%{version}%{vrc}.tar.gz
+Source0:	http://www.vorbis.com/files/rc1/unix/%{name}-%{version}.tar.gz
 BuildRequires:	libvorbis-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libao-devel
@@ -34,7 +33,7 @@ kbps/kana³. To umieszcza Vorbisa w tej samej klasie co MPEG-1 audio
 layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
 
 %prep
-%setup -q -n %{name}-%{version}%{vrc}
+%setup -q
 
 %build
 rm missing
@@ -51,11 +50,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+gzip -9nf README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%{_mandir}/man?/*
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man?/*
