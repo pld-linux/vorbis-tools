@@ -4,7 +4,7 @@ Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.0rc3
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.vorbis.com/files/rc2/unix/%{name}-%{version}.tar.gz
