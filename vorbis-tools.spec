@@ -19,7 +19,7 @@ BuildRequires:	libao-devel >= 0.8.3
 BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:%{version}
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.6m
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
 
