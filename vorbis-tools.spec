@@ -1,7 +1,7 @@
 Summary:	The OGG Vorbis lossy audio compression codec
 Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Name:		vorbis-tools
-Version:	1.0rc2
+Version:	1.0rc3
 Release:	1
 License:	GPL
 Group:		Development/Libraries
@@ -20,6 +20,8 @@ BuildRequires:	libao-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
+BuildRequires:	curl-devel
+BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
 
@@ -41,12 +43,12 @@ layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
 %setup -q
 
 %build
-rm -f missing
-libtoolize --copy --force
-aclocal
-autoconf
-automake -a -c
-%configure 
+#rm -f missing
+#libtoolize --copy --force
+#aclocal
+#autoconf
+#automake -a -c
+%configure2_13
 %{__make}
 
 %install
