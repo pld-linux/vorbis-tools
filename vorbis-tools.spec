@@ -1,8 +1,10 @@
 Summary:	The OGG Vorbis lossy audio compression codec
+Summary(es):	Utensilios Ogg Vorbis
 Summary(pl):	Codec do stratnej kompresji dºwiÍku Vorbis OGG
+Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.0rc3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
@@ -15,13 +17,13 @@ Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Source0:	http://www.vorbis.com/files/rc2/unix/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.xiph.org/vorbis/index.html
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	curl-devel
 BuildRequires:	libao-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
-BuildRequires:	curl-devel
 BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
@@ -39,6 +41,17 @@ Ogg Vorbis to wysokiej jako∂ci (44.1-48.0kHz, 16+ bit, polifonia),
 kompresowalny format audio przy sta≥ej i zmiennej bitrate od 16 do 128
 kbps/kana≥. To umieszcza Vorbisa w tej samej klasie co MPEG-1 audio
 layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
+
+%description -l pt_BR
+Ogg Vorbis e' um formato de ·udio aberto de propÛsito geral,
+n„o-propriet·rio e isento de patentes e royalties, para ·udio e musica
+de alta qualidade.
+
+Este pacote contem as seguintes ferramentas Vorbis: oggenc, o encoder
+Ogg Vorbis; ogg123, reprodutor de ·udio de linha de comando;
+vorbiscomment, um editor de coment·rios para arquivos Ogg Vorbis;
+ogginfo, mostra as informaÁıes de arquivos Ogg Vorbis; e vcut, que
+permite dividir arquivos Ogg Vorbis.
 
 %prep
 %setup -q
