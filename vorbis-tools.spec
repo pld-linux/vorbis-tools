@@ -11,17 +11,18 @@ Group:		Development/Libraries
 Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
 # Source0-md5:	80d3ae3bbae2a488d433d86b8fd64777
 Patch0:		%{name}-ac_fixes.patch
-Patch1:		%{name}-amfix.patch
-Patch2:		%{name}-nolibnsl.patch
+Patch1:		%{name}-nolibnsl.patch
 URL:		http://www.vorbis.com/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	curl-devel
+BuildRequires:	flac-devel
 BuildRequires:	libao-devel >= 0.8.3
 BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.0-6
 BuildRequires:	openssl-devel >= 0.9.7c
+BuildRequires:	speex-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
 
@@ -44,12 +45,10 @@ de alta qualidade.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
-%patch2 -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}

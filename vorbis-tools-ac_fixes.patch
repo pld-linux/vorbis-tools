@@ -1,7 +1,6 @@
-diff -Nur vorbis-tools-1.0.orig/configure.in vorbis-tools-1.0/configure.in
---- vorbis-tools-1.0.orig/configure.in	Thu Jul 11 16:10:34 2002
-+++ vorbis-tools-1.0/configure.in	Sat Jul 20 17:54:52 2002
-@@ -11,11 +11,7 @@
+--- vorbis-tools-1.0.1/configure.in.orig	2003-11-22 02:13:34.000000000 +0100
++++ vorbis-tools-1.0.1/configure.in	2003-11-22 02:17:55.570777208 +0100
+@@ -16,11 +16,7 @@
  dnl Check for programs
  dnl --------------------------------------------------  
  
@@ -13,11 +12,11 @@ diff -Nur vorbis-tools-1.0.orig/configure.in vorbis-tools-1.0/configure.in
  
  AM_PROG_LIBTOOL
  
-@@ -28,55 +24,6 @@
+@@ -33,55 +29,6 @@
  
  AC_CANONICAL_HOST
  
--casecflags_save="$CFLAGS"
+-cflags_save="$CFLAGS"
 -ldflags_save="$LDFLAGS"
 -if test -z "$GCC"; then
 -        case $host in
@@ -69,24 +68,3 @@ diff -Nur vorbis-tools-1.0.orig/configure.in vorbis-tools-1.0/configure.in
  dnl --------------------------------------------------
  dnl Allow tools to be selectively built
  dnl --------------------------------------------------
-@@ -167,4 +114,19 @@
- AC_SUBST(I18N_CFLAGS)
- AC_SUBST(I18N_LIBS)
- 
--AC_OUTPUT(Makefile intl/Makefile po/Makefile.in include/Makefile share/Makefile win32/Makefile oggdec/Makefile oggenc/Makefile oggenc/man/Makefile ogg123/Makefile vorbiscomment/Makefile vcut/Makefile ogginfo/Makefile debian/Makefile)
-+AC_OUTPUT([
-+           Makefile
-+           intl/Makefile
-+           po/Makefile.in
-+           include/Makefile
-+           share/Makefile
-+           win32/Makefile
-+           oggdec/Makefile
-+           oggenc/Makefile
-+           oggenc/man/Makefile
-+           ogg123/Makefile
-+           vorbiscomment/Makefile
-+           vcut/Makefile
-+           ogginfo/Makefile
-+           debian/Makefile
-+])
