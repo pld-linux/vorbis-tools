@@ -1,0 +1,106 @@
+diff -Nur vorbis-tools.org/Makefile.am vorbis-tools/Makefile.am
+--- vorbis-tools.org/Makefile.am	Mon Sep 11 09:13:25 2000
++++ vorbis-tools/Makefile.am	Sun Oct 29 12:18:02 2000
+@@ -2,7 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+-SUBDIRS = oggenc vorbiscomment
++SUBDIRS = ogg123 oggenc vorbiscomment
+ 
+ EXTRA_DIST = README
+ 
+diff -Nur vorbis-tools.org/configure.in vorbis-tools/configure.in
+--- vorbis-tools.org/configure.in	Mon Sep 11 09:13:25 2000
++++ vorbis-tools/configure.in	Sun Oct 29 15:17:13 2000
+@@ -25,6 +25,10 @@
+ 
+ AC_ARG_WITH(ogg, [  --with-ogg=DIR          Set where the Ogg library is located]) 
+ AC_ARG_WITH(vorbis, [  --with-vorbis=DIR          Set where the Vorbis library is located]) 
++AC_ARG_WITH(oa, [  --with-ao=DIR          Set where the AudioOutput library is located]) 
++AC_ARG_WITH(esd, [  --with-esd=DIR          Set where the ESD library is located]) 
++AC_ARG_WITH(asound, [  --with-asound=DIR          Set where the asound (ALSA) library is located]) 
++AC_ARG_WITH(ossaudio, [  --with-oss=DIR          Set where the ossaudio library is located]) 
+ 
+ dnl --------------------------------------------------
+ dnl Set build flags based on environment
+@@ -54,11 +58,24 @@
+ fi 
+ AC_CHECK_LIB(ogg, oggpack_read, LIBS="$LIBS -logg", AC_MSG_ERROR([You must have libogg to compile vorbis!!!]))
+ 
+-dnl Check for libvorbis
++dnl Check for esd, asound, ossaudio
++AC_CHECK_LIB(esd, esd_play_stream, LIBS="$LIBS -lesd")
++AC_CHECK_LIB(asound, snd_pcm_open, LIBS="$LIBS -lasound")
++AC_CHECK_LIB(ossaudio, main, LIBS="$LIBS -lossaudio")
++
++dnl Check for libao
++if test -n $with_ao; then
++	CFLAGS="$CFLAGS -I$with_ao/include -L$with_ao/lib"
++fi 
++AC_CHECK_LIB(ao, ao_get_driver_id, LIBS="$LIBS -lao", AC_MSG_ERROR([You must have libao to compile vorbis!!!]))
++
++dnl Check for libvorbis and libvorbisfile
+ if test -n $with_vorbis; then
+ 	CFLAGS="$CFLAGS -I$with_vorbis/include -L$with_vorbis/lib"
+ fi
+ AC_CHECK_LIB(vorbis, vorbis_info_init, LIBS="$LIBS -lvorbis", AC_MSG_ERROR([You must have libvorbis to compile vorbis-tools!!!]))
++AC_CHECK_LIB(vorbisfile, ov_open, LIBS="$LIBS -lvorbisfile", AC_MSG_ERROR([You must have libvorbisfile to compile vorbis-tools!!!]))
++
+ 
+ dnl --------------------------------------------------
+ dnl Check for library functions
+@@ -75,4 +92,10 @@
+ AC_SUBST(PROFILE)
+ AC_SUBST(CC)
+ 
+-AC_OUTPUT(Makefile oggenc/Makefile vorbiscomment/Makefile)
++AC_OUTPUT([
++Makefile
++ogg123/Makefile
++oggenc/Makefile
++oggenc/man/Makefile
++vorbiscomment/Makefile
++])
+diff -Nur vorbis-tools.org/ogg123/Makefile.am vorbis-tools/ogg123/Makefile.am
+--- vorbis-tools.org/ogg123/Makefile.am	Thu Jan  1 01:00:00 1970
++++ vorbis-tools/ogg123/Makefile.am	Sun Oct 29 15:32:44 2000
+@@ -0,0 +1,17 @@
++## Process this file with automake to produce Makefile.in
++
++AUTOMAKE_OPTIONS = foreign
++
++bin_PROGRAMS = ogg123
++
++ogg123_SOURCES = ogg123.c
++
++man_MANS = ogg123.1
++
++EXTRA_DIST = ogg123.1
++
++debug:
++	$(MAKE) all CFLAGS="@DEBUG@"
++
++profile:
++	$(MAKE) all CFLAGS="@PROFILE@"
+diff -Nur vorbis-tools.org/oggenc/Makefile.am vorbis-tools/oggenc/Makefile.am
+--- vorbis-tools.org/oggenc/Makefile.am	Mon Sep 11 08:31:35 2000
++++ vorbis-tools/oggenc/Makefile.am	Sun Oct 29 12:16:08 2000
+@@ -2,6 +2,8 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
++SUBDIRS = man
++
+ bin_PROGRAMS = oggenc
+ 
+ oggenc_SOURCES = oggenc.c audio.c encode.c oe_unix.c getopt.c getopt1.c\
+diff -Nur vorbis-tools.org/oggenc/man/Makefile.am vorbis-tools/oggenc/man/Makefile.am
+--- vorbis-tools.org/oggenc/man/Makefile.am	Thu Jan  1 01:00:00 1970
++++ vorbis-tools/oggenc/man/Makefile.am	Sun Oct 29 15:33:25 2000
+@@ -0,0 +1,5 @@
++## Process this file with automake to produce Makefile.in
++
++man_MANS = oggenc.1
++
++EXTRA_DIST = oggenc.1
