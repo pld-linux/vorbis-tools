@@ -21,7 +21,7 @@ BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
 
-%description 
+%description
 Ogg Vorbis is a fully Open, non-proprietary, patent-and-royalty-free,
 general-purpose compressed audio format for high quality
 (44.1-48.0kHz, 16+ bit, polyphonic) audio and music at fixed and
