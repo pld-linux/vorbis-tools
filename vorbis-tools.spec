@@ -31,7 +31,7 @@ the same class as audio representations including MPEG-1 audio layer
 Ogg Vorbis to wysokiej jako¶ci (44.1-48.0kHz, 16+ bit, polifonia),
 kompresowalny format audio przy sta³ej i zmiennej bitrate od 16 do 128
 kbps/kana³. To umieszcza Vorbisa w tej samej klasie co MPEG-1 audio
-layer 3, MPEG-3 audio (AAC i TwinVQ) oraz PAC.
+layer 3, MPEG-4 audio (AAC i TwinVQ) oraz PAC.
 
 %prep
 %setup -q -n %{name}-%{version}%{vrc}
