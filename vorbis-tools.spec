@@ -11,6 +11,7 @@ Group:		Development/Libraries
 Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-amfix.patch
+Patch2:		%{name}-nolibnsl.patch
 URL:		http://www.vorbis.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -44,6 +45,7 @@ de alta qualidade.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
