@@ -12,7 +12,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
-Source0:	http://www.vorbis.com/files/rc1/unix/%{name}-%{version}.tar.gz
+Source0:	http://www.vorbis.com/files/rc2/unix/%{name}-%{version}.tar.gz
 URL:		http://www.xiph.org/vorbis/index.html
 BuildRequires:	automake
 BuildRequires:	autoconf
