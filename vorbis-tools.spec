@@ -3,20 +3,21 @@ Summary(es):	Utensilios Ogg Vorbis
 Summary(pl):	Codec do stratnej kompresji d¼wiêku Vorbis OGG
 Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.0rc3
-Release:	4
+Version:	1.0
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		Development/Libraries
-Source0:	http://www.vorbis.com/files/rc2/unix/%{name}-%{version}.tar.gz
+Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.xiph.org/vorbis/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	curl-devel
-BuildRequires:	libao-devel
-BuildRequires:	libogg-devel
+BuildRequires:	libao-devel >= 0.8.3
+BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel = %{version}
+BuildRequires:	libvorbis-devel >= 1:%{version}
 BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	vorbis
