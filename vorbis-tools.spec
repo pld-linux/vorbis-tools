@@ -3,13 +3,13 @@ Summary(es):	Utensilios Ogg Vorbis
 Summary(pl):	Narzêdzia do obs³ugi plików w formacie Ogg Vorbis
 Summary(pt_BR):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.0.1
-Release:	3
+Version:	1.1.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Libraries
-Source0:	http://www.vorbis.com/files/%{version}/unix/%{name}-%{version}.tar.gz
-# Source0-md5:	80d3ae3bbae2a488d433d86b8fd64777
+Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
+# Source0-md5:	47845fd76f5f2354a3619c4097575487
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
 URL:		http://www.vorbis.com/
@@ -20,11 +20,12 @@ BuildRequires:	flac-devel
 BuildRequires:	libao-devel >= 0.8.3
 BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel >= 1:1.0-6
+BuildRequires:	libvorbis-devel >= 1:1.1.1
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	speex-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:	libvorbis >= 1:1.1.1
 Obsoletes:	vorbis
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Ogg Vorbis is a fully open, non-proprietary, patent-and-royalty-free,
