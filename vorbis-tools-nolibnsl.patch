@@ -1,5 +1,5 @@
---- vorbis-tools-1.0/configure.in.orig	Sun Mar  2 18:44:45 2003
-+++ vorbis-tools-1.0/configure.in	Sun Mar  2 18:52:06 2003
+--- vorbis-tools-1.1.1/configure.ac.orig	Sun Mar  2 18:44:45 2003
++++ vorbis-tools-1.1.1/configure.ac	Sun Mar  2 18:52:06 2003
 @@ -49,8 +49,8 @@
  I18N_LIBS=$INTLLIBS
  

@@ -1,5 +1,5 @@
---- vorbis-tools-1.0.1/configure.in.orig	2003-11-22 02:13:34.000000000 +0100
-+++ vorbis-tools-1.0.1/configure.in	2003-11-22 02:17:55.570777208 +0100
+--- vorbis-tools-1.1.1/configure.ac.orig	2003-11-22 02:13:34.000000000 +0100
++++ vorbis-tools-1.1.1/configure.ac	2003-11-22 02:17:55.570777208 +0100
 @@ -16,11 +16,7 @@
  dnl Check for programs
  dnl --------------------------------------------------  
