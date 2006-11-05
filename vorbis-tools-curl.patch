@@ -1,0 +1,12 @@
+--- vorbis-tools-1.1.1/ogg123/http_transport.c.orig	2005-06-13 15:11:44.000000000 +0200
++++ vorbis-tools-1.1.1/ogg123/http_transport.c	2006-11-06 00:45:47.225024000 +0100
+@@ -116,7 +116,9 @@
+   if (inputOpts.ProxyTunnel)
+     curl_easy_setopt (handle, CURLOPT_HTTPPROXYTUNNEL, inputOpts.ProxyTunnel);
+   */
++#ifdef CURLOPT_MUTE
+   curl_easy_setopt(handle, CURLOPT_MUTE, 1);
++#endif
+   curl_easy_setopt(handle, CURLOPT_ERRORBUFFER, private->error);
+   curl_easy_setopt(handle, CURLOPT_PROGRESSFUNCTION, progress_callback);
+   curl_easy_setopt(handle, CURLOPT_PROGRESSDATA, private);
