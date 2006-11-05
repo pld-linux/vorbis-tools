@@ -12,11 +12,13 @@ Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
 # Source0-md5:	47845fd76f5f2354a3619c4097575487
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
+Patch2:		%{name}-curl.patch
 URL:		http://www.vorbis.com/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	curl-devel
 BuildRequires:	flac-devel
+BuildRequires:	gettext-devel
 BuildRequires:	libao-devel >= 0.8.3
 BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
@@ -48,11 +50,14 @@ de alta qualidade.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
+%{__gettextize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
