@@ -1,7 +1,7 @@
 Summary:	The Ogg Vorbis Tools
-Summary(es.UTF-8):   Utensilios Ogg Vorbis
-Summary(pl.UTF-8):   Narzędzia do obsługi plików w formacie Ogg Vorbis
-Summary(pt_BR.UTF-8):   Ferramentas Ogg Vorbis
+Summary(es.UTF-8):	Utensilios Ogg Vorbis
+Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
+Summary(pt_BR.UTF-8):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.1.1
 Release:	5
