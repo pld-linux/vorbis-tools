@@ -1,7 +1,7 @@
 Summary:	The Ogg Vorbis Tools
-Summary(es):	Utensilios Ogg Vorbis
-Summary(pl):	Narz�dzia do obs�ugi plik�w w formacie Ogg Vorbis
-Summary(pt_BR):	Ferramentas Ogg Vorbis
+Summary(es.UTF-8):   Utensilios Ogg Vorbis
+Summary(pl.UTF-8):   Narzędzia do obsługi plików w formacie Ogg Vorbis
+Summary(pt_BR.UTF-8):   Ferramentas Ogg Vorbis
 Name:		vorbis-tools
 Version:	1.1.1
 Release:	5
@@ -36,15 +36,15 @@ general-purpose compressed audio format for high quality audio. This
 package contains various tools for Ogg Vorbis files such as command
 line encoder, decoder, player, etc.
 
-%description -l pl
-Ogg Vorbis jest otwartym, niezale�nym oraz wolnym od odp�at i patent�w
-formatem og�lnego przeznaczenia dla plik�w d�wi�kowych wysokiej
-jako�ci. Pakiet zawiera r�ne narz�dzia do obs�ugi plik�w w tym
+%description -l pl.UTF-8
+Ogg Vorbis jest otwartym, niezależnym oraz wolnym od odpłat i patentów
+formatem ogólnego przeznaczenia dla plików dźwiękowych wysokiej
+jakości. Pakiet zawiera różne narzędzia do obsługi plików w tym
 formacie, np.: kompresor, dekompresor, odtwarzacz, itp.
 
-%description -l pt_BR
-Ogg Vorbis e' um formato de �udio aberto de prop�sito geral,
-n�o-propriet�rio e isento de patentes e royalties, para �udio e musica
+%description -l pt_BR.UTF-8
+Ogg Vorbis e' um formato de áudio aberto de propósito geral,
+não-proprietário e isento de patentes e royalties, para áudio e musica
 de alta qualidade.
 
 %prep
