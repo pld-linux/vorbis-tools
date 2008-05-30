@@ -3,17 +3,15 @@ Summary(es.UTF-8):	Utensilios Ogg Vorbis
 Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
 Summary(pt_BR.UTF-8):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.1.1
-Release:	7
+Version:	1.2.0
+Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2
 Group:		Development/Libraries
 Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
-# Source0-md5:	47845fd76f5f2354a3619c4097575487
+# Source0-md5:	df976d24e51ef3d87cd462edf747bf9a
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
-Patch2:		%{name}-curl.patch
-Patch3:		%{name}-flac.patch
 URL:		http://www.vorbis.com/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -51,8 +49,6 @@ de alta qualidade.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p2
 
 %build
 %{__gettextize}
@@ -77,6 +73,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%doc AUTHORS CHANGES README
+%attr(755,root,root) %{_bindir}/ogg123
+%attr(755,root,root) %{_bindir}/oggdec
+%attr(755,root,root) %{_bindir}/oggenc
+%attr(755,root,root) %{_bindir}/ogginfo
+%attr(755,root,root) %{_bindir}/vorbiscomment
+%{_mandir}/man1/ogg123.1*
+%{_mandir}/man1/oggdec.1*
+%{_mandir}/man1/oggenc.1*
+%{_mandir}/man1/ogginfo.1*
+%{_mandir}/man1/vorbiscomment.1*
