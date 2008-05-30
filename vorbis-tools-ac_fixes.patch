@@ -1,6 +1,6 @@
---- vorbis-tools-1.1.1/configure.ac.orig	2003-11-22 02:13:34.000000000 +0100
-+++ vorbis-tools-1.1.1/configure.ac	2003-11-22 02:17:55.570777208 +0100
-@@ -16,11 +16,7 @@
+--- vorbis-tools-1.2.0/configure.ac.orig	2008-03-03 06:37:31.000000000 +0100
++++ vorbis-tools-1.2.0/configure.ac	2008-05-30 19:00:51.669612156 +0200
+@@ -20,11 +20,7 @@
  dnl Check for programs
  dnl --------------------------------------------------  
  
@@ -10,14 +10,13 @@
  AC_PROG_CC
 -CFLAGS="$cflags_save"
  
- AM_PROG_LIBTOOL
+ AC_PROG_LIBTOOL
  
-@@ -33,55 +29,6 @@
- 
- AC_CANONICAL_HOST
+@@ -42,53 +38,6 @@
+ dnl Set build flags based on environment
+ dnl --------------------------------------------------
  
 -cflags_save="$CFLAGS"
--ldflags_save="$LDFLAGS"
 -if test -z "$GCC"; then
 -        case $host in
 -        *-*-irix*)
@@ -40,8 +39,8 @@
 -        case $host in
 -        *-*-linux*)
 -                DEBUG="-g -Wall -fsigned-char"
--                CFLAGS="-O20 -ffast-math -fsigned-char"
--                PROFILE="-Wall -W -pg -g -O20 -ffast-math -fsigned-char"
+-                CFLAGS="-O2 -Wall -ffast-math -fsigned-char"
+-                PROFILE="-Wall -W -pg -g -O2 -ffast-math -fsigned-char"
 -                ;;
 -        sparc-sun-*)
 -                DEBUG="-g -Wall -fsigned-char -mv8"
@@ -55,15 +54,14 @@
 -                ;;
 -        *)
 -                DEBUG="-g -Wall -fsigned-char"
--                CFLAGS="-O20 -fsigned-char"
--                PROFILE="-O20 -g -pg -fsigned-char"
+-                CFLAGS="-O2 -fsigned-char"
+-                PROFILE="-O2 -g -pg -fsigned-char"
 -                ;;
 -        esac
 -fi
 -CFLAGS="$CFLAGS $cflags_save"
 -DEBUG="$DEBUG $cflags_save"
 -PROFILE="$PROFILE $cflags_save"
--LDFLAGS="$LDFLAGS $ldflags_save"
 -
  dnl --------------------------------------------------
  dnl Allow tools to be selectively built
