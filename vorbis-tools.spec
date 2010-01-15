@@ -23,6 +23,7 @@ BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.1.1
 BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	pkgconfig
 BuildRequires:	speex-devel
 Requires:	libvorbis >= 1:1.1.1
 Obsoletes:	vorbis
