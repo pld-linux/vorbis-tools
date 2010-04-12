@@ -1,15 +1,16 @@
+# TODO: libkate (needs http://wiki.xiph.org/OggKate, http://code.google.com/p/libkate/downloads/list)
 Summary:	The Ogg Vorbis Tools
 Summary(es.UTF-8):	Utensilios Ogg Vorbis
 Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
 Summary(pt_BR.UTF-8):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		Development/Libraries
 Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
-# Source0-md5:	df976d24e51ef3d87cd462edf747bf9a
+# Source0-md5:	567e0fb8d321b2cd7124f8208b8b90e6
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
 URL:		http://www.vorbis.com/
@@ -18,14 +19,14 @@ BuildRequires:	automake
 BuildRequires:	curl-devel
 BuildRequires:	flac-devel >= 1.1.3
 BuildRequires:	gettext-devel
-BuildRequires:	libao-devel >= 0.8.3
+BuildRequires:	libao-devel >= 1.0.0
 BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
-BuildRequires:	libvorbis-devel >= 1:1.1.1
+BuildRequires:	libvorbis-devel >= 1:1.3.0
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	pkgconfig
 BuildRequires:	speex-devel
-Requires:	libvorbis >= 1:1.1.1
+Requires:	libvorbis >= 1:1.3.0
 Obsoletes:	vorbis
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -79,9 +80,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/oggdec
 %attr(755,root,root) %{_bindir}/oggenc
 %attr(755,root,root) %{_bindir}/ogginfo
+%attr(755,root,root) %{_bindir}/vcut
 %attr(755,root,root) %{_bindir}/vorbiscomment
 %{_mandir}/man1/ogg123.1*
 %{_mandir}/man1/oggdec.1*
 %{_mandir}/man1/oggenc.1*
 %{_mandir}/man1/ogginfo.1*
+%{_mandir}/man1/vcut.1*
 %{_mandir}/man1/vorbiscomment.1*
