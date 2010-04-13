@@ -1,4 +1,3 @@
-# TODO: libkate (needs http://wiki.xiph.org/OggKate, http://code.google.com/p/libkate/downloads/list)
 Summary:	The Ogg Vorbis Tools
 Summary(es.UTF-8):	Utensilios Ogg Vorbis
 Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
@@ -20,6 +19,7 @@ BuildRequires:	curl-devel
 BuildRequires:	flac-devel >= 1.1.3
 BuildRequires:	gettext-devel
 BuildRequires:	libao-devel >= 1.0.0
+BuildRequires:	libkate-devel
 BuildRequires:	libogg-devel >= 2:1.1
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1:1.3.0
