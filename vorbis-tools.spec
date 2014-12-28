@@ -17,7 +17,7 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	curl-devel
 BuildRequires:	flac-devel >= 1.1.3
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	libao-devel >= 1.0.0
 BuildRequires:	libkate-devel
 BuildRequires:	libogg-devel >= 2:1.1
