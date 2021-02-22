@@ -3,16 +3,17 @@ Summary(es.UTF-8):	Utensilios Ogg Vorbis
 Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
 Summary(pt_BR.UTF-8):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.4.0
-Release:	2
+Version:	1.4.2
+Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		Development/Libraries
-Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
-# Source0-md5:	567e0fb8d321b2cd7124f8208b8b90e6
+Source0:	https://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
+# Source0-md5:	998fca293bd4e4bdc2b96fb70f952f4e
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
-URL:		http://www.vorbis.com/
+Patch2:		%{name}-gettext.patch
+URL:		https://xiph.org/vorbis/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	curl-devel
@@ -51,15 +52,17 @@ de alta qualidade.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__gettextize}
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -68,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+
 %find_lang %{name}
 
 %clean
@@ -75,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES README
+%doc AUTHORS CHANGES README ogg123/ogg123rc-example
 %attr(755,root,root) %{_bindir}/ogg123
 %attr(755,root,root) %{_bindir}/oggdec
 %attr(755,root,root) %{_bindir}/oggenc

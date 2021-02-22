@@ -1,0 +1,126 @@
+--- vorbis-tools-1.4.2/configure.ac.orig	2021-02-22 19:19:35.132876726 +0100
++++ vorbis-tools-1.4.2/configure.ac	2021-02-22 19:20:30.112578875 +0100
+@@ -30,7 +30,7 @@
+ AC_PROG_LIBTOOL
+ 
+ ALL_LINGUAS="be cs da en_GB eo es fr hr hu nl pl ro ru sk sv uk vi"
+-AM_GNU_GETTEXT
++AM_GNU_GETTEXT([external])
+ 
+ dnl --------------------------------------------------
+ dnl System checks
+@@ -129,9 +129,6 @@
+ SHARE_LIBS='$(top_builddir)/share/libutf8.a $(top_builddir)/share/libgetopt.a'
+ SHARE_CFLAGS='-I$(top_srcdir)/include'
+ 
+-I18N_CFLAGS='-I$(top_srcdir)/intl'
+-I18N_LIBS=$INTLLIBS
+-
+ SOCKET_LIBS=
+ AC_CHECK_FUNC(socket, , [
+ AC_CHECK_LIB(socket, socket, SOCKET_LIBS="-lsocket")
+@@ -341,15 +338,12 @@
+ AC_SUBST(SHARE_LIBS)
+ AC_SUBST(CURL_CFLAGS)
+ AC_SUBST(CURL_LIBS)
+-AC_SUBST(I18N_CFLAGS)
+-AC_SUBST(I18N_LIBS)
+ 
+ 
+ AC_CONFIG_FILES([
+ Makefile
+ m4/Makefile
+ po/Makefile.in
+-intl/Makefile
+ include/Makefile
+ share/Makefile
+ win32/Makefile
+--- vorbis-tools-1.4.2/ogg123/Makefile.am.orig	2021-01-03 22:35:16.000000000 +0100
++++ vorbis-tools-1.4.2/ogg123/Makefile.am	2021-02-22 19:39:09.833179495 +0100
+@@ -31,12 +31,12 @@
+ bin_PROGRAMS = ogg123
+ 
+ AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @OPUSFILE_CFLAGS@ @AO_CFLAGS@ @CURL_CFLAGS@ \
+-              @PTHREAD_CFLAGS@ @SHARE_CFLAGS@ @I18N_CFLAGS@
++              @PTHREAD_CFLAGS@ @SHARE_CFLAGS@
+ 
+ ogg123_LDADD = @SHARE_LIBS@ $(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a \
+ 	       @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @AO_LIBS@ \
+                @SOCKET_LIBS@ @LIBICONV@ @CURL_LIBS@ @PTHREAD_CFLAGS@ \
+-               @PTHREAD_LIBS@ @I18N_LIBS@ @FLAC_LIBS@ @SPEEX_LIBS@ @OPUSFILE_LIBS@ \
++               @PTHREAD_LIBS@ @INTLLIBS@ @FLAC_LIBS@ @SPEEX_LIBS@ @OPUSFILE_LIBS@ \
+ 	       -lm
+ 
+ ogg123_DEPENDENCIES = @SHARE_LIBS@ $(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
+--- vorbis-tools-1.4.2/oggenc/Makefile.am.orig	2020-12-18 15:49:34.000000000 +0100
++++ vorbis-tools-1.4.2/oggenc/Makefile.am	2021-02-22 20:52:03.496151995 +0100
+@@ -19,11 +19,11 @@
+ 
+ bin_PROGRAMS = oggenc
+ 
+-AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@ @KATE_CFLAGS@ @I18N_CFLAGS@
++AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@ @KATE_CFLAGS@
+ 
+ oggenc_LDADD = @SHARE_LIBS@ \
+ 	       @VORBISENC_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ \
+-	       @LIBICONV@ @I18N_LIBS@ @FLAC_LIBS@ -lm
++	       @LIBICONV@ @INTLLIBS@ @FLAC_LIBS@ -lm
+ 
+ oggenc_DEPENDENCIES = @SHARE_LIBS@
+ 
+--- vorbis-tools-1.4.2/oggdec/Makefile.am.orig	2020-12-18 15:49:34.000000000 +0100
++++ vorbis-tools-1.4.2/oggdec/Makefile.am	2021-02-22 20:56:42.011309816 +0100
+@@ -9,9 +9,9 @@
+ 
+ bin_PROGRAMS = oggdec
+ 
+-AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@ @I18N_CFLAGS@
++AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@
+ 
+-oggdec_LDADD = @LIBICONV@ @SHARE_LIBS@ @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @I18N_LIBS@
++oggdec_LDADD = @LIBICONV@ @SHARE_LIBS@ @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @INTLLIBS@
+ oggdec_DEPENDENCIES = @SHARE_LIBS@
+ 
+ oggdec_SOURCES = $(oggdecsources)
+--- vorbis-tools-1.4.2/ogginfo/Makefile.am.orig	2021-01-08 11:26:00.000000000 +0100
++++ vorbis-tools-1.4.2/ogginfo/Makefile.am	2021-02-22 20:59:48.440299843 +0100
+@@ -27,9 +27,9 @@
+ mandir = @MANDIR@
+ man_MANS = $(mans)
+ 
+-AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@ @KATE_CFLAGS@ @I18N_CFLAGS@
++AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@ @KATE_CFLAGS@
+ 
+-ogginfo_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ @LIBICONV@ @I18N_LIBS@ \
++ogginfo_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ @LIBICONV@ @INTLLIBS@ \
+ 		$(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
+ ogginfo_DEPENDENCIES = @SHARE_LIBS@ \
+ 		       $(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
+--- vorbis-tools-1.4.2/vcut/Makefile.am.orig	2020-12-18 15:49:34.000000000 +0100
++++ vorbis-tools-1.4.2/vcut/Makefile.am	2021-02-22 21:02:54.509291821 +0100
+@@ -11,9 +11,9 @@
+ mandir = @MANDIR@
+ man_MANS = $(mans)
+ 
+-AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@ @I18N_CFLAGS@
++AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@
+ 
+-vcut_LDADD = @VORBIS_LIBS@ @OGG_LIBS@ @I18N_LIBS@
++vcut_LDADD = @VORBIS_LIBS@ @OGG_LIBS@ @INTLLIBS@
+ 
+ vcut_SOURCES = $(vcutsources)
+ EXTRA_vcut_SOURCES = $(man_MANS)
+--- vorbis-tools-1.4.2/vorbiscomment/Makefile.am.orig	2020-12-18 15:49:34.000000000 +0100
++++ vorbis-tools-1.4.2/vorbiscomment/Makefile.am	2021-02-22 21:04:13.268865144 +0100
+@@ -11,9 +11,9 @@
+ mandir = @MANDIR@
+ man_MANS = $(mans)
+ 
+-AM_CPPFLAGS = @SHARE_CFLAGS@ @I18N_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@
++AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@
+ 
+-vorbiscomment_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBICONV@ @I18N_LIBS@
++vorbiscomment_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBICONV@ @INTLLIBS@
+ vorbiscomment_DEPENDENCIES = @SHARE_LIBS@
+ 
+ vorbiscomment_SOURCES = $(vorbiscommentsources)
