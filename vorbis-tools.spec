@@ -13,6 +13,7 @@ Source0:	https://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
 Patch2:		%{name}-gettext.patch
+Patch3:		%{name}-pl.po-update.patch
 URL:		https://xiph.org/vorbis/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -53,6 +54,7 @@ de alta qualidade.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__gettextize}
