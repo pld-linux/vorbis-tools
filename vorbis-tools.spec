@@ -29,7 +29,7 @@ BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	pkgconfig
 BuildRequires:	speex-devel
 Requires:	libvorbis >= 1:1.3.0
-Obsoletes:	vorbis
+Obsoletes:	vorbis < 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
