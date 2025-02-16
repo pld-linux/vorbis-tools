@@ -14,6 +14,7 @@ Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
 Patch2:		%{name}-gettext.patch
 Patch3:		%{name}-pl.po-update.patch
+Patch4:		includes.patch
 URL:		https://xiph.org/vorbis/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -55,6 +56,7 @@ de alta qualidade.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
+%patch -P4 -p1
 
 %build
 %{__gettextize}
