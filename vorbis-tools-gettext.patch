@@ -1,15 +1,15 @@
---- vorbis-tools-1.4.2/configure.ac.orig	2021-02-22 19:19:35.132876726 +0100
-+++ vorbis-tools-1.4.2/configure.ac	2021-02-22 19:20:30.112578875 +0100
-@@ -30,7 +30,7 @@
+--- vorbis-tools-1.4.3/configure.ac.orig	2025-04-19 16:40:27.079685294 +0200
++++ vorbis-tools-1.4.3/configure.ac	2025-04-19 16:40:54.416203866 +0200
+@@ -30,7 +30,7 @@ AC_PROG_CC
  AC_PROG_LIBTOOL
  
- ALL_LINGUAS="be cs da en_GB eo es fr hr hu nl pl ro ru sk sv uk vi"
+ ALL_LINGUAS="be cs da de en_GB eo es fr hr hu id ka nb nl pl ro ru sk sl sr sv uk vi "
 -AM_GNU_GETTEXT
 +AM_GNU_GETTEXT([external])
  
  dnl --------------------------------------------------
  dnl System checks
-@@ -129,9 +129,6 @@
+@@ -145,9 +145,6 @@ AM_CONDITIONAL(HAVE_LIBOPUSFILE, test "x
  SHARE_LIBS='$(top_builddir)/share/libutf8.a $(top_builddir)/share/libgetopt.a'
  SHARE_CFLAGS='-I$(top_srcdir)/include'
  
@@ -19,7 +19,7 @@
  SOCKET_LIBS=
  AC_CHECK_FUNC(socket, , [
  AC_CHECK_LIB(socket, socket, SOCKET_LIBS="-lsocket")
-@@ -341,15 +338,12 @@
+@@ -357,15 +354,12 @@ AC_SUBST(SHARE_CFLAGS)
  AC_SUBST(SHARE_LIBS)
  AC_SUBST(CURL_CFLAGS)
  AC_SUBST(CURL_LIBS)
@@ -48,7 +48,7 @@
  	       @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @AO_LIBS@ \
                 @SOCKET_LIBS@ @LIBICONV@ @CURL_LIBS@ @PTHREAD_CFLAGS@ \
 -               @PTHREAD_LIBS@ @I18N_LIBS@ @FLAC_LIBS@ @SPEEX_LIBS@ @OPUSFILE_LIBS@ \
-+               @PTHREAD_LIBS@ @INTLLIBS@ @FLAC_LIBS@ @SPEEX_LIBS@ @OPUSFILE_LIBS@ \
++               @PTHREAD_LIBS@ @LIBINTL@ @FLAC_LIBS@ @SPEEX_LIBS@ @OPUSFILE_LIBS@ \
  	       -lm
  
  ogg123_DEPENDENCIES = @SHARE_LIBS@ $(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
@@ -64,7 +64,7 @@
  oggenc_LDADD = @SHARE_LIBS@ \
  	       @VORBISENC_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ \
 -	       @LIBICONV@ @I18N_LIBS@ @FLAC_LIBS@ -lm
-+	       @LIBICONV@ @INTLLIBS@ @FLAC_LIBS@ -lm
++	       @LIBICONV@ @LIBINTL@ @FLAC_LIBS@ -lm
  
  oggenc_DEPENDENCIES = @SHARE_LIBS@
  
@@ -78,7 +78,7 @@
 +AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@
  
 -oggdec_LDADD = @LIBICONV@ @SHARE_LIBS@ @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @I18N_LIBS@
-+oggdec_LDADD = @LIBICONV@ @SHARE_LIBS@ @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @INTLLIBS@
++oggdec_LDADD = @LIBICONV@ @SHARE_LIBS@ @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBINTL@
  oggdec_DEPENDENCIES = @SHARE_LIBS@
  
  oggdec_SOURCES = $(oggdecsources)
@@ -92,7 +92,7 @@
 +AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@ @KATE_CFLAGS@
  
 -ogginfo_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ @LIBICONV@ @I18N_LIBS@ \
-+ogginfo_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ @LIBICONV@ @INTLLIBS@ \
++ogginfo_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @KATE_LIBS@ @OGG_LIBS@ @LIBICONV@ @LIBINTL@ \
  		$(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
  ogginfo_DEPENDENCIES = @SHARE_LIBS@ \
  		       $(top_builddir)/share/libpicture.a $(top_builddir)/share/libbase64.a
@@ -106,7 +106,7 @@
 +AM_CPPFLAGS = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @SHARE_CFLAGS@
  
 -vcut_LDADD = @VORBIS_LIBS@ @OGG_LIBS@ @I18N_LIBS@
-+vcut_LDADD = @VORBIS_LIBS@ @OGG_LIBS@ @INTLLIBS@
++vcut_LDADD = @VORBIS_LIBS@ @OGG_LIBS@ @LIBINTL@
  
  vcut_SOURCES = $(vcutsources)
  EXTRA_vcut_SOURCES = $(man_MANS)
@@ -120,7 +120,7 @@
 +AM_CPPFLAGS = @SHARE_CFLAGS@ @OGG_CFLAGS@ @VORBIS_CFLAGS@
  
 -vorbiscomment_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBICONV@ @I18N_LIBS@
-+vorbiscomment_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBICONV@ @INTLLIBS@
++vorbiscomment_LDADD = @SHARE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @LIBICONV@ @LIBINTL@
  vorbiscomment_DEPENDENCIES = @SHARE_LIBS@
  
  vorbiscomment_SOURCES = $(vorbiscommentsources)

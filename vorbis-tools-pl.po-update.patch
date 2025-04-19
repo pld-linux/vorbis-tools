@@ -1,23 +1,23 @@
---- vorbis-tools-1.4.2/po/pl.po.orig	2021-01-21 10:20:48.000000000 +0100
-+++ vorbis-tools-1.4.2/po/pl.po	2021-02-25 19:32:35.247776939 +0100
+--- vorbis-tools-1.4.3/po/pl.po.orig	2025-04-13 08:11:46.000000000 +0200
++++ vorbis-tools-1.4.3/po/pl.po	2025-04-19 16:43:03.992168560 +0200
 @@ -1,13 +1,13 @@
  # Polish translation for vorbis-tools.
  # This file is distributed under the same license as the vorbis-tools package.
--# Jakub Bogusz <qboosh@pld-linux.org>, 2008.
-+# Jakub Bogusz <qboosh@pld-linux.org>, 2008-2021.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2008-2022.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2008-2025.
  #
  msgid ""
  msgstr ""
--"Project-Id-Version: vorbis-tools 1.3.0pre2\n"
-+"Project-Id-Version: vorbis-tools 1.4.2\n"
+-"Project-Id-Version: vorbis-tools 1.4.0\n"
++"Project-Id-Version: vorbis-tools 1.4.3\n"
  "Report-Msgid-Bugs-To: https://trac.xiph.org/\n"
- "POT-Creation-Date: 2021-01-21 09:20+0000\n"
--"PO-Revision-Date: 2008-11-12 16:25+0100\n"
-+"PO-Revision-Date: 2021-02-23 21:58+0100\n"
+ "POT-Creation-Date: 2025-04-13 06:11+0000\n"
+-"PO-Revision-Date: 2022-10-29 21:30+0200\n"
++"PO-Revision-Date: 2025-04-19 08:05+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
-@@ -223,10 +223,9 @@
+@@ -224,10 +224,11 @@ msgid "=== Driver %s is not a file outpu
  msgstr "=== Sterownik %s nie jest sterownikiem wyjścia do pliku.\n"
  
  #: ogg123/cmdline_options.c:144
@@ -25,11 +25,13 @@
  msgid ""
  "=== Cannot specify output file without previously specifying a driver.\n"
 -msgstr "=== Nie można podać pliku wyjściowego bez określenia sterownika.\n"
-+msgstr "=== Nie można podać pliku wyjściowego bez uprzedniego określenia sterownika.\n"
++msgstr ""
++"=== Nie można podać pliku wyjściowego bez uprzedniego określenia "
++"sterownika.\n"
  
  #: ogg123/cmdline_options.c:163
  #, c-format
-@@ -277,13 +276,13 @@
+@@ -278,13 +279,13 @@ msgstr ""
  "określono sterownika. Zakończenie.\n"
  
  #: ogg123/cmdline_options.c:307
@@ -45,16 +47,16 @@
  "\n"
  
  #: ogg123/cmdline_options.c:309 oggdec/oggdec.c:58
-@@ -292,6 +291,8 @@
+@@ -293,6 +294,8 @@ msgid ""
  " using decoder %s.\n"
  "\n"
  msgstr ""
-+" z wykorzystaniem dekodera %s.\n"
++" wykorzystujący dekoder %s.\n"
 +"\n"
  
  #: ogg123/cmdline_options.c:311
  #, c-format
-@@ -322,7 +323,7 @@
+@@ -323,7 +326,7 @@ msgstr "Speex, "
  #: ogg123/cmdline_options.c:325
  #, c-format
  msgid "Opus, "
@@ -63,7 +65,7 @@
  
  #: ogg123/cmdline_options.c:328
  #, c-format
-@@ -767,9 +768,8 @@
+@@ -768,9 +771,8 @@ msgid "Track number:"
  msgstr "Numer ścieżki:"
  
  #: ogg123/vorbis_comments.c:42
@@ -74,7 +76,7 @@
  
  #: ogg123/vorbis_comments.c:43
  msgid "ReplayGain (Track):"
-@@ -798,26 +798,26 @@
+@@ -799,26 +801,26 @@ msgstr "Komentarz:"
  #: ogg123/vorbis_comments.c:131
  #, c-format
  msgid "Picture: Type \"%s\"%s with description \"%s\" and URI %s"
@@ -85,19 +87,19 @@
  #, c-format
  msgid "Picture: Type \"%s\"%s URI %s"
 -msgstr ""
-+msgstr "Obraz: typ \"%s\"%s URI %s"
++msgstr "Obraz: typ \"%s\"%s, URI %s"
  
  #: ogg123/vorbis_comments.c:137
  #, c-format
  msgid "Picture: Type \"%s\"%s with description \"%s\", %zu bytes %s"
 -msgstr ""
-+msgstr "Obraz: typ \"%s\"%s z opisem \"%s\", bajtów %zu %s"
++msgstr "Obraz: typ \"%s\"%s z opisem \"%s\", bajtów %zu, %s"
  
  #: ogg123/vorbis_comments.c:139
  #, c-format
  msgid "Picture: Type \"%s\"%s %zu bytes %s"
 -msgstr ""
-+msgstr "Obraz: typ \"%s\"%s, bajtów %zu %s"
++msgstr "Obraz: typ \"%s\"%s, bajtów %zu, %s"
  
  #: ogg123/vorbis_comments.c:144
  msgid "Picture: <corrupted>"
@@ -106,10 +108,10 @@
  
  #: oggdec/oggdec.c:51
  #, c-format
-@@ -825,11 +825,9 @@
+@@ -826,11 +828,9 @@ msgid "oggdec from %s %s\n"
  msgstr "oggdec z pakietu %s %s\n"
  
- #: oggdec/oggdec.c:57 oggenc/oggenc.c:504
+ #: oggdec/oggdec.c:57 oggenc/oggenc.c:510
 -#, fuzzy, c-format
 +#, c-format
  msgid " by the Xiph.Org Foundation (https://www.xiph.org/)\n"
@@ -120,242 +122,85 @@
  
  #: oggdec/oggdec.c:59
  #, c-format
-@@ -925,12 +923,9 @@
- msgstr "BŁĄD: nie udało się otworzyć wejścia jako Vorbis\n"
- 
- #: oggdec/oggdec.c:294
--#, fuzzy, c-format
-+#, c-format
- msgid "Decoding \"%s\" to \"%s\"\n"
--msgstr ""
--"\n"
--"\n"
--"Zakończono kodowanie pliku \"%s\"\n"
-+msgstr "Dekodowanie \"%s\" do \"%s\"\n"
- 
- #: oggdec/oggdec.c:295 oggenc/encode.c:797 oggenc/encode.c:804
- #: oggenc/encode.c:812 oggenc/encode.c:819 oggenc/encode.c:825
-@@ -972,9 +967,8 @@
- "wejściowy\n"
- 
- #: oggenc/audio.c:47
--#, fuzzy
- msgid "WAV file reader"
--msgstr "Czytnik plików RAW"
-+msgstr "Czytnik plików WAV"
- 
- #: oggenc/audio.c:48
- msgid "AIFF/AIFC file reader"
-@@ -989,9 +983,9 @@
- msgstr "Czytnik plików Ogg FLAC"
- 
- #: oggenc/audio.c:129 oggenc/audio.c:459
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Unexpected EOF in reading WAV header\n"
--msgstr "UWAGA: nieoczekiwany EOF podczas odczytu nagłówka Wave\n"
-+msgstr "Uwaga: nieoczekiwany EOF podczas odczytu nagłówka WAV\n"
- 
- #: oggenc/audio.c:140
- #, c-format
-@@ -999,109 +993,109 @@
- msgstr "Pominięto fragment typu \"%s\" o długości %d\n"
- 
- #: oggenc/audio.c:166
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Unexpected EOF in AIFF chunk\n"
--msgstr "UWAGA: nieoczekiwany EOF we fragmencie AIFF\n"
-+msgstr "Uwaga: nieoczekiwany EOF we fragmencie AIFF\n"
- 
- #: oggenc/audio.c:264
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: No common chunk found in AIFF file\n"
--msgstr "UWAGA: nie znaleziono ogólnego fragmentu w pliku AIFF\n"
-+msgstr "Uwaga: nie znaleziono ogólnego fragmentu w pliku AIFF\n"
- 
- #: oggenc/audio.c:270
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Truncated common chunk in AIFF header\n"
--msgstr "UWAGA: skrócony ogólny fragment w nagłówku AIFF\n"
-+msgstr "Uwaga: skrócony ogólny fragment w nagłówku AIFF\n"
- 
- #: oggenc/audio.c:278
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Unexpected EOF in reading AIFF header\n"
--msgstr "UWAGA: nieoczekiwany EOF podczas odczytu nagłówka AIFF\n"
-+msgstr "Uwaga: nieoczekiwany EOF podczas odczytu nagłówka AIFF\n"
+@@ -1016,9 +1016,9 @@ msgid "Warning: Unexpected EOF in readin
+ msgstr "Uwaga: nieoczekiwany EOF podczas odczytu nagłówka AIFF\n"
  
  #: oggenc/audio.c:289
 -#, fuzzy, c-format
 +#, c-format
  msgid "Warning: Unsupported count of channels in AIFF header\n"
--msgstr "UWAGA: skrócony ogólny fragment w nagłówku AIFF\n"
-+msgstr "Uwaga: nieobsługiwana liczba kanałów w nagłówku AIFF\n"
+-msgstr "Uwaga: skrócony ogólny fragment w nagłówku AIFF\n"
++msgstr "Uwaga: nieobsługiwana liczba kanagłów w nagłówku AIFF\n"
  
  #: oggenc/audio.c:298
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: AIFF-C header truncated.\n"
--msgstr "UWAGA: skrócony nagłówek AIFF-C.\n"
-+msgstr "Uwaga: skrócony nagłówek AIFF-C.\n"
- 
- #: oggenc/audio.c:312
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Can't handle compressed AIFF-C (%c%c%c%c)\n"
--msgstr "UWAGA: nie można obsłużyć skompresowanego AIFF-C (%c%c%c%c)\n"
-+msgstr "Uwaga: nie można obsłużyć skompresowanego AIFF-C (%c%c%c%c)\n"
- 
- #: oggenc/audio.c:319
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: No SSND chunk found in AIFF file\n"
--msgstr "UWAGA: nie znaleziono fragmentu SSND w pliku AIFF\n"
-+msgstr "Uwaga: nie znaleziono fragmentu SSND w pliku AIFF\n"
- 
- #: oggenc/audio.c:325
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Corrupted SSND chunk in AIFF header\n"
--msgstr "UWAGA: uszkodzony fragment SSND w nagłówku AIFF\n"
-+msgstr "Uwaga: uszkodzony fragment SSND w nagłówku AIFF\n"
- 
- #: oggenc/audio.c:331
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Unexpected EOF reading AIFF header\n"
--msgstr "UWAGA: nieoczekiwany EOF podczas odczytu nagłówka AIFF\n"
-+msgstr "Uwaga: nieoczekiwany EOF podczas odczytu nagłówka AIFF\n"
- 
- #: oggenc/audio.c:381
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Warning: OggEnc does not support this type of AIFF/AIFC file\n"
- " Must be 8 or 16 bit PCM.\n"
- msgstr ""
--"UWAGA: oggenc nie obsługuje tego rodzaju plików AIFF/AIFC\n"
-+"Uwaga: OggEnc nie obsługuje tego rodzaju plików AIFF/AIFC\n"
- " Plik musi być 8- lub 16-bitowym PCM.\n"
- 
- #: oggenc/audio.c:439
--#, fuzzy, c-format
-+#, c-format
- msgid "Warning: Unrecognised format chunk in WAV header\n"
--msgstr "UWAGA: nierozpoznany fragment formatu w nagłówku Wave\n"
-+msgstr "Uwaga: nierozpoznany fragment formatu w nagłówku WAV\n"
- 
- #: oggenc/audio.c:452
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Warning: INVALID format chunk in wav header.\n"
- " Trying to read anyway (may not work)...\n"
- msgstr ""
--"UWAGA: nieprawidłowy fragment formatu w nagłówku Wave.\n"
-+"Uwaga: BŁĘDNY fragment formatu w nagłówku WAV.\n"
+ #, c-format
+@@ -1069,9 +1069,9 @@ msgstr ""
  " Próba odczytu mimo to (może się nie udać)...\n"
  
- #: oggenc/audio.c:472
- #, c-format
+ #: oggenc/audio.c:470
+-#, fuzzy, c-format
++#, c-format
  msgid "Warning: Unsupported count of channels in WAV header\n"
--msgstr ""
+-msgstr "Uwaga: nierozpoznany fragment formatu w nagłówku WAV\n"
 +msgstr "Uwaga: nieobsługiwana liczba kanałów w nagłówku WAV\n"
  
- #: oggenc/audio.c:537
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "ERROR: Wav file is unsupported type (must be standard PCM\n"
- " or type 3 floating point PCM\n"
- msgstr ""
--"BŁĄD: plik Wave nieobsługiwanego typu (musi być standardowym PCM\n"
-+"BŁĄD: plik WAV nieobsługiwanego typu (musi być standardowym PCM\n"
- " lub zmiennoprzecinkowym PCM typu 3)\n"
- 
- #: oggenc/audio.c:546
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Warning: WAV 'block alignment' value is incorrect, ignoring.\n"
- "The software that created this file is incorrect.\n"
- msgstr ""
--"UWAGA: wartość 'block alignment' WAV jest niepoprawna, zignorowano.\n"
-+"Uwaga: wartość 'block alignment' WAV jest niepoprawna, zignorowano.\n"
- "Program, który utworzył ten plik, jest niepoprawny.\n"
- 
- #: oggenc/audio.c:615
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "ERROR: Wav file is unsupported subformat (must be 8,16, or 24 bit PCM\n"
- "or floating point PCM\n"
- msgstr ""
--"BŁĄD: plik Wav jest w nieobsługiwanym podformacie (musi być 8-, 16-, 24-\n"
--"lub 32-bitowym PCM albo zmiennoprzecinkowym PCM)\n"
-+"BŁĄD: plik WAV jest w nieobsługiwanym podformacie (musi być 8-, 16-, 24-\n"
-+"lub zmiennoprzecinkowym PCM)\n"
- 
- #: oggenc/audio.c:691
+ #: oggenc/audio.c:535
  #, c-format
-@@ -1115,7 +1109,7 @@
- "Błąd wewnętrzny: próba odczytu nieobsługiwanej rozdzielczości bitowej %d\n"
- 
- #: oggenc/audio.c:799
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "BUG: Got zero samples from resampler: your file will be truncated. Please "
- "report this.\n"
-@@ -1134,9 +1128,9 @@
- msgstr "Ustawianie zaawansowanej opcji kodera \"%s\" na %s\n"
- 
- #: oggenc/encode.c:73
--#, fuzzy, c-format
-+#, c-format
- msgid "Setting advanced encoder option \"%s\"\n"
--msgstr "Ustawianie zaawansowanej opcji kodera \"%s\" na %s\n"
-+msgstr "Ustawianie zaawansowanej opcji kodera \"%s\"\n"
- 
- #: oggenc/encode.c:114
+@@ -1481,8 +1481,8 @@ msgstr "BŁĄD: podano wiele plików jed
+ #: oggenc/oggenc.c:153
  #, c-format
-@@ -1515,9 +1509,9 @@
+ msgid ""
+-"ERROR: Multiple input files with specified output filename: suggest using -"
+-"n\n"
++"ERROR: Multiple input files with specified output filename: suggest using "
++"-n\n"
+ msgstr ""
+ "BŁĄD: wiele plików wejściowych z określoną nazwą pliku wyjściowego: "
+ "należałoby użyć -n\n"
+@@ -1512,9 +1512,9 @@ msgid "ERROR: Input file \"%s\" is not a
  msgstr "BŁĄD: plik wejściowy \"%s\" nie jest w obsługiwanym formacie\n"
  
- #: oggenc/oggenc.c:290
+ #: oggenc/oggenc.c:291
 -#, fuzzy, c-format
 +#, c-format
  msgid "ERROR: Input file \"%s\" has invalid sampling rate\n"
 -msgstr "BŁĄD: plik wejściowy \"%s\" nie jest w obsługiwanym formacie\n"
 +msgstr "BŁĄD: plik wejściowy \"%s\" ma błędną częstotliwość próbkowania\n"
  
- #: oggenc/oggenc.c:349
+ #: oggenc/oggenc.c:351
  #, c-format
-@@ -1573,6 +1567,8 @@
+@@ -1570,6 +1570,8 @@ msgid ""
  " using encoder %s.\n"
  "\n"
  msgstr ""
-+" z wykorzystaniem kodera %s.\n"
++" wykorzystujący koder %s.\n"
 +"\n"
  
- #: oggenc/oggenc.c:506
+ #: oggenc/oggenc.c:512
  #, c-format
-@@ -2115,6 +2111,10 @@
+@@ -1837,8 +1839,8 @@ msgid ""
+ " -L, --lyrics         Include lyrics from given file (.srt or .lrc format)\n"
+ " -Y, --lyrics-language  Sets the language for the lyrics\n"
+ msgstr ""
+-" -L, --lyrics         Dołączenie tekstu z podanego pliku (format .srt lub ."
+-"lrc)\n"
++" -L, --lyrics         Dołączenie tekstu z podanego pliku (format .srt "
++"lub .lrc)\n"
+ " -Y, --lyrucs-language  Ustawienie języka tekstu utworu\n"
+ 
+ #: oggenc/oggenc.c:606
+@@ -2112,6 +2114,10 @@ msgid ""
  "\tPlayback length: %ldm:%02ld.%03lds\n"
  "\tAverage bitrate: %f kb/s\n"
  msgstr ""
-+"Strumień %s %d:\n"
-+"\tCałkowita długość danych: %<PRId64> b\n"
++"%s strumień %d:\n"
++"\tCałkowita długość w bajtach: %<PRId64>\n"
 +"\tCzas odtwarzania: %ldm:%02ld.%03lds\n"
-+"\tŚredni przepływ danych: %f kb/s\n"
++"\tŚrednie bitrate: %f kb/s\n"
  
  #: ogginfo/ogginfo2.c:127
  #, c-format
-@@ -2141,11 +2141,11 @@
+@@ -2138,11 +2144,13 @@ msgstr ""
  "powodować problemy z niektórymi narzędziami.\n"
  
  #: ogginfo/ogginfo2.c:278
@@ -365,11 +210,13 @@
  "WARNING: Hole in data (%d bytes) found at approximate offset %<PRId64> "
  "bytes. Corrupted Ogg.\n"
 -msgstr "UWAGA: dziura w danych (%d bajtów) pod przybliżonym offsetem %"
-+msgstr "UWAGA: dziura w danych (%d bajtów) pod przybliżonym offsetem %<PRId64> bajtów. Uszkodzony Ogg.\n"
++msgstr ""
++"UWAGA: dziura w danych (%d bajtów) pod przybliżonym offsetem (w bajtach) "
++"%<PRId64>. Uszkodzony Ogg.\n"
  
  #: ogginfo/ogginfo2.c:305
  #, c-format
-@@ -2235,12 +2235,12 @@
+@@ -2232,12 +2240,12 @@ msgid "ogginfo from %s %s\n"
  msgstr "ogginfo z pakietu %s %s\n"
  
  #: ogginfo/ogginfo2.c:400
@@ -384,31 +231,7 @@
  "\n"
  
  #: ogginfo/ogginfo2.c:401
-@@ -2362,12 +2362,12 @@
- msgstr "Nie udało się otworzyć %s do zapisu\n"
- 
- #: vcut/vcut.c:250
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Usage: vcut infile.ogg outfile1.ogg outfile2.ogg [cutpoint | +cuttime]\n"
- msgstr ""
- "Składnia: vcut plik_wej.ogg plik_wyj1.ogg plik_wyj2.ogg [punkt_cięcia | "
--"+punkt_cięcia]\n"
-+"+czas_cięcia]\n"
- 
- #: vcut/vcut.c:252
- #, c-format
-@@ -2387,7 +2387,7 @@
- msgstr "Nie udało się przeanalizować punktu cięcia \"%s\"\n"
- 
- #: vcut/vcut.c:287
--#, fuzzy, c-format
-+#, c-format
- msgid "Processing: Cutting at %lf seconds\n"
- msgstr "Przetwarzanie: cięcie po %lf sekundach\n"
- 
-@@ -2402,9 +2402,9 @@
+@@ -2399,9 +2407,9 @@ msgid "Processing failed\n"
  msgstr "Przetwarzanie nie powiodło się\n"
  
  #: vcut/vcut.c:341
@@ -420,7 +243,7 @@
  
  #: vcut/vcut.c:392
  #, c-format
-@@ -2412,20 +2412,20 @@
+@@ -2409,20 +2417,22 @@ msgid "Cutpoint not found\n"
  msgstr "Nie znaleziono punktu cięcia\n"
  
  #: vcut/vcut.c:398
@@ -441,138 +264,381 @@
  "Can't produce a file starting between sample positions %<PRId64> and "
  "%<PRId64>.\n"
 -msgstr "Nie można stworzyć pliku zaczynającego się między pozycjami próbek "
-+msgstr "Nie można stworzyć pliku zaczynającego się między pozycjami próbek %<PRId64> i %<PRId64>.\n"
++msgstr ""
++"Nie można stworzyć pliku zaczynającego się między pozycjami próbek %<PRId64> "
++"i %<PRId64>.\n"
  
  #: vcut/vcut.c:446
  #, c-format
-@@ -2448,12 +2448,12 @@
- msgstr "Przeplatane strumienie bitowe nie są obsługiwane\n"
- 
- #: vcut/vcut.c:531
--#, fuzzy, c-format
-+#, c-format
- msgid "Internal stream parsing error\n"
--msgstr "Błąd wewnętrzny analizy opcji polecenia\n"
-+msgstr "Błąd wewnętrzny analizy strumienia\n"
- 
- #: vcut/vcut.c:545
--#, fuzzy, c-format
-+#, c-format
- msgid "Header packet corrupt\n"
- msgstr "Uszkodzony pakiet nagłówka\n"
- 
-@@ -2463,7 +2463,7 @@
- msgstr "Błąd strumienia danych, kontynuacja\n"
- 
- #: vcut/vcut.c:561
--#, fuzzy, c-format
-+#, c-format
- msgid "Error in header: not vorbis?\n"
- msgstr "Błąd w nagłówku: to nie jest Vorbis?\n"
- 
-@@ -2473,9 +2473,9 @@
- msgstr "Wejście nie jest typu Ogg.\n"
- 
- #: vcut/vcut.c:616
--#, fuzzy, c-format
-+#, c-format
- msgid "Page error, continuing\n"
--msgstr "Błąd strumienia danych, kontynuacja\n"
-+msgstr "Błąd strony, kontynuacja\n"
- 
- #: vcut/vcut.c:626
- #, c-format
-@@ -2483,7 +2483,7 @@
- msgstr "UWAGA: plik wejściowy nieoczekiwanie się skończył\n"
- 
- #: vcut/vcut.c:630
--#, fuzzy, c-format
-+#, c-format
- msgid "WARNING: found EOS before cutpoint\n"
- msgstr "UWAGA: napotkano EOS przed punktem cięcia\n"
- 
-@@ -2568,10 +2568,9 @@
- msgstr "Nie określono akcji\n"
- 
- #: vorbiscomment/vcomment.c:465
--#, fuzzy, c-format
-+#, c-format
- msgid "Couldn't un-escape comment, cannot add\n"
--msgstr ""
--"Nie udało się przekonwertować komentarza do UTF-8, nie można go dodać\n"
-+msgstr "Nie udało się odwrócić cytowania komentarza, nie można dodać\n"
- 
- #: vorbiscomment/vcomment.c:616
- #, c-format
-@@ -2590,7 +2589,7 @@
- msgstr "Wypisanie i modyfikacja komentarzy w plikach Ogg Vorbis.\n"
- 
- #: vorbiscomment/vcomment.c:622
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "Usage: \n"
- "  vorbiscomment [-Vh]\n"
-@@ -2599,8 +2598,8 @@
- msgstr ""
- "Składnia:\n"
- "  vorbiscomment [-Vh]\n"
--"  vorbiscomment [-lR] plik\n"
--"  vorbiscomment [-R] [-c plik] [-t znacznik] <-a|-w> plik_wej [plik_wyj]\n"
-+"  vorbiscomment [-lRe] plik_wej\n"
-+"  vorbiscomment <-a|-w> [-Re] [-c plik] [-t znacznik] plik_wej [plik_wyj]\n"
- 
- #: vorbiscomment/vcomment.c:628
- #, c-format
-@@ -2622,9 +2621,9 @@
+@@ -2618,9 +2628,9 @@ msgid "Editing options\n"
  msgstr "Opcje modyfikacji\n"
  
- #: vorbiscomment/vcomment.c:633
+ #: vorbiscomment/vcomment.c:640
 -#, fuzzy, c-format
 +#, c-format
  msgid "  -a, --append            Update comments\n"
 -msgstr "  -a, --append            Dołączenie komentarzy\n"
 +msgstr "  -a, --append            Uaktualnienie komentarzy\n"
  
- #: vorbiscomment/vcomment.c:634
+ #: vorbiscomment/vcomment.c:641
  #, c-format
-@@ -2645,6 +2644,11 @@
+@@ -2641,6 +2651,11 @@ msgid ""
  "removed\n"
  "                          This implies -a,\n"
  msgstr ""
 +"  -d \"nazwa[=wartość]\", --rm \"nazwa[=wartość]\"\n"
-+"                          Przekazanie znacznika komentarza do usunięcia.\n"
-+"                          Jeśli nie podano wartości, wszystkie znaczniki\n"
-+"                          o podanej nazwie będą usunięte.\n"
-+"                          Włącza to -a.\n"
++"                          Określenie z wiersza poleceń znacznika komentarza "
++"do\n"
++"                          usunięcia; jeśli nie podano wartości, usuwane są\n"
++"                          wszystkie komentarze o podanej nazwie; włącza -a,\n"
  
- #: vorbiscomment/vcomment.c:640
+ #: vorbiscomment/vcomment.c:647
  #, c-format
-@@ -2678,6 +2682,8 @@
- "  -e, --escapes           Use \\n-style escapes to allow multiline "
- "comments.\n"
+@@ -2706,8 +2721,8 @@ msgid ""
+ "default, comments are written to stdout when listing, and read from stdin "
+ "when\n"
+ "editing. Alternatively, a file can be specified with the -c option, or tags\n"
+-"can be given on the commandline with -t \"name=value\". Use of either -c or -"
+-"t\n"
++"can be given on the commandline with -t \"name=value\". Use of either -c or "
++"-t\n"
+ "disables reading from stdin.\n"
  msgstr ""
-+"  -e, --escapes           Użycie znaków specjalnych w stylu \\n, pozwalających\n"
-+"                          na wieloliniowe komentarze.\n"
- 
- #: vorbiscomment/vcomment.c:652
+ "vorbiscomment obsługuje komentarze w formacie \"nazwa=wartość\", po jednym\n"
+@@ -2795,336 +2810,3 @@ msgstr "Błąd zmiany nazwy z %s na %s\n
  #, c-format
-@@ -2730,7 +2736,7 @@
- "  vorbiscomment -a wej.ogg -t \"ARTIST=Jakiś facet\" -t \"TITLE=Tytuł\"\n"
- 
- #: vorbiscomment/vcomment.c:672
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "NOTE: Raw mode (--raw, -R) will read and write comments in UTF-8 rather "
- "than\n"
-@@ -2743,7 +2749,8 @@
- "UWAGA: W trybie surowym (--raw, -R) komentarze są czytane i zapisywane\n"
- "w UTF-8 bez konwersji do zestawu znaków użytkownika - jest to przydatne\n"
- "w skryptach. Jednak nie jest ot wystarczające przy przekazywaniu komentarzy\n"
--"we wszystkich przypadkach.\n"
-+"we wszystkich przypadkach, ponieważ komentarze mogą zawierać znaki nowej\n"
-+"linii. Aby to obsłużyć, można użyć cytowania (-e, --escape).\n"
- 
- #: vorbiscomment/vcomment.c:739
- #, c-format
+ msgid "Error removing erroneous temporary file %s\n"
+ msgstr "Błąd usuwania błędnego pliku tymczasowego %s\n"
+-
+-#, c-format
+-#~ msgid "oggenc from %s %s"
+-#~ msgstr "oggenc z pakietu %s %s"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Comment %d in stream %d has invalid format, does not contain "
+-#~ "'=': \"%s\"\n"
+-#~ msgstr ""
+-#~ "UWAGA: komentarz %d w strumieniu %d ma błędny format, nie zawiera '=': "
+-#~ "\"%s\"\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Invalid comment fieldname in comment %d (stream %d): \"%s\"\n"
+-#~ msgstr "UWAGA: błędna nazwa pola w komentarzu %d (strumień %d): \"%s\"\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Illegal UTF-8 sequence in comment %d (stream %d): length marker "
+-#~ "wrong\n"
+-#~ msgstr ""
+-#~ "UWAGA: niedozwolona sekwencja UTF-8 w komentarzu %d (strumień %d): błędny "
+-#~ "znacznik długości\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Illegal UTF-8 sequence in comment %d (stream %d): too few bytes\n"
+-#~ msgstr ""
+-#~ "UWAGA: niedozwolona sekwencja UTF-8 w komentarzu %d (strumień %d): za "
+-#~ "mało bajtów\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Illegal UTF-8 sequence in comment %d (stream %d): invalid "
+-#~ "sequence \"%s\": %s\n"
+-#~ msgstr ""
+-#~ "UWAGA: niedozwolona sekwencja UTF-8 w komentarzu %d (strumień %d): błędna "
+-#~ "sekwencja \"%s\": %s\n"
+-
+-#~ msgid "WARNING: Failure in UTF-8 decoder. This should not be possible\n"
+-#~ msgstr "UWAGA: usterka dekodera UTF-8. To nie powinno być możliwe.\n"
+-
+-#, c-format
+-#~ msgid "WARNING: discontinuity in stream (%d)\n"
+-#~ msgstr "UWAGA: nieciągłość w strumieniu (%d)\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Could not decode Theora header packet - invalid Theora stream "
+-#~ "(%d)\n"
+-#~ msgstr ""
+-#~ "UWAGA: nie udało się zdekodować pakietu nagłówka Theora - błędny strumień "
+-#~ "Theora (%d)\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Theora stream %d does not have headers correctly framed. "
+-#~ "Terminal header page contains additional packets or has non-zero "
+-#~ "granulepos\n"
+-#~ msgstr ""
+-#~ "UWAGA: strumień Theora %d nie ma właściwych ramek nagłówków. Końcowa "
+-#~ "strona nagłówka zawiera dodatkowe pakiety lub ma niezerową granulepos\n"
+-
+-#, c-format
+-#~ msgid "Theora headers parsed for stream %d, information follows...\n"
+-#~ msgstr ""
+-#~ "Przeanalizowano nagłówki Theora dla strumienia %d, informacje poniżej...\n"
+-
+-#, c-format
+-#~ msgid "Version: %d.%d.%d\n"
+-#~ msgstr "Wersja: %d.%d>%d\n"
+-
+-#, c-format
+-#~ msgid "Vendor: %s\n"
+-#~ msgstr "Producent: %s\n"
+-
+-#, c-format
+-#~ msgid "Width: %d\n"
+-#~ msgstr "Szerokość: %d\n"
+-
+-#, c-format
+-#~ msgid "Height: %d\n"
+-#~ msgstr "Wysokość: %d\n"
+-
+-#, c-format
+-#~ msgid "Total image: %d by %d, crop offset (%d, %d)\n"
+-#~ msgstr "Całkowity obraz: %d na %d, offset obcięcia (%d, %d)\n"
+-
+-#~ msgid "Frame offset/size invalid: width incorrect\n"
+-#~ msgstr "Błędny offset/rozmiar ramki: niepoprawna szerokość\n"
+-
+-#~ msgid "Frame offset/size invalid: height incorrect\n"
+-#~ msgstr "Błędny offset/rozmiar ramki: niepoprawna wysokość\n"
+-
+-#~ msgid "Invalid zero framerate\n"
+-#~ msgstr "Błędna zerowa częstotliwość ramek\n"
+-
+-#, c-format
+-#~ msgid "Framerate %d/%d (%.02f fps)\n"
+-#~ msgstr "Częstotliwość ramek %d/%d (%.02f fps)\n"
+-
+-#~ msgid "Aspect ratio undefined\n"
+-#~ msgstr "Nieokreślone proporcje\n"
+-
+-#, c-format
+-#~ msgid "Pixel aspect ratio %d:%d (%f:1)\n"
+-#~ msgstr "Proporcje pikseli %d:%d (%f:1)\n"
+-
+-#~ msgid "Frame aspect 4:3\n"
+-#~ msgstr "Proporcje klatki 4:3\n"
+-
+-#~ msgid "Frame aspect 16:9\n"
+-#~ msgstr "Proporcje klatki 16:9\n"
+-
+-#, c-format
+-#~ msgid "Frame aspect %f:1\n"
+-#~ msgstr "Proporcje klatki %f:1\n"
+-
+-#~ msgid "Colourspace: Rec. ITU-R BT.470-6 System M (NTSC)\n"
+-#~ msgstr "Przestrzeń kolorów: Rec. ITU-R BT.470-6 system M (NTSC)\n"
+-
+-#~ msgid "Colourspace: Rec. ITU-R BT.470-6 Systems B and G (PAL)\n"
+-#~ msgstr "Przestrzeń kolorów: Rec. ITU-R BT.470-6 systemy B i G (PAL)\n"
+-
+-#~ msgid "Colourspace unspecified\n"
+-#~ msgstr "Przestrzeń kolorów nieokreślona\n"
+-
+-#~ msgid "Pixel format 4:2:0\n"
+-#~ msgstr "Format piksela 4:2:0\n"
+-
+-#~ msgid "Pixel format 4:2:2\n"
+-#~ msgstr "Format piksela 4:2:2\n"
+-
+-#~ msgid "Pixel format 4:4:4\n"
+-#~ msgstr "Format piksela 4:4:4\n"
+-
+-#~ msgid "Pixel format invalid\n"
+-#~ msgstr "Format piksela błędny\n"
+-
+-#, c-format
+-#~ msgid "Target bitrate: %d kbps\n"
+-#~ msgstr "Docelowe bitrate: %d kbps\n"
+-
+-#, c-format
+-#~ msgid "Nominal quality setting (0-63): %d\n"
+-#~ msgstr "Nominalne ustawienie jakości (0-63): %d\n"
+-
+-#~ msgid "User comments section follows...\n"
+-#~ msgstr "Sekcja komentarzy użytkownika poniżej...\n"
+-
+-#~ msgid "WARNING: Expected frame %"
+-#~ msgstr "UWAGA: oczekiwano ramki %"
+-
+-#~ msgid "WARNING: granulepos in stream %d decreases from %"
+-#~ msgstr "UWAGA: granulepos w strumieniu %d zmniejsza się z %"
+-
+-#~ msgid ""
+-#~ "Theora stream %d:\n"
+-#~ "\tTotal data length: %"
+-#~ msgstr ""
+-#~ "Strumień Theora %d:\n"
+-#~ "\tCałkowita długość danych: %"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Could not decode Vorbis header packet %d - invalid Vorbis stream "
+-#~ "(%d)\n"
+-#~ msgstr ""
+-#~ "UWAGA: nie udało się zdekodować pakietu nagłówka Vorbis %d - błędny "
+-#~ "strumień Vorbis (%d)\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Vorbis stream %d does not have headers correctly framed. "
+-#~ "Terminal header page contains additional packets or has non-zero "
+-#~ "granulepos\n"
+-#~ msgstr ""
+-#~ "UWAGA: strumień Vorbis %d nie ma właściwych ramek nagłówków. Końcowa "
+-#~ "strona nagłówka zawiera dodatkowe pakiety lub ma niezerową granulepos\n"
+-
+-#, c-format
+-#~ msgid "Vorbis headers parsed for stream %d, information follows...\n"
+-#~ msgstr ""
+-#~ "Przeanalizowano nagłówki Vorbis dla strumienia %d, informacje poniżej...\n"
+-
+-#, c-format
+-#~ msgid "Version: %d\n"
+-#~ msgstr "Wersja: %d\n"
+-
+-#, c-format
+-#~ msgid "Vendor: %s (%s)\n"
+-#~ msgstr "Producent: %s (%s)\n"
+-
+-#, c-format
+-#~ msgid "Channels: %d\n"
+-#~ msgstr "Kanały: %d\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "Rate: %ld\n"
+-#~ "\n"
+-#~ msgstr ""
+-#~ "Częstotliwość: %ld\n"
+-#~ "\n"
+-
+-#, c-format
+-#~ msgid "Nominal bitrate: %f kb/s\n"
+-#~ msgstr "Nominalne bitrate: %f kb/s\n"
+-
+-#~ msgid "Nominal bitrate not set\n"
+-#~ msgstr "Nominalne bitrate nie ustawione\n"
+-
+-#, c-format
+-#~ msgid "Upper bitrate: %f kb/s\n"
+-#~ msgstr "Wyższe bitrate: %f kb/s\n"
+-
+-#~ msgid "Upper bitrate not set\n"
+-#~ msgstr "Wyższe bitrate nie ustawione\n"
+-
+-#, c-format
+-#~ msgid "Lower bitrate: %f kb/s\n"
+-#~ msgstr "Niższe bitrate: %f kb/s\n"
+-
+-#~ msgid "Lower bitrate not set\n"
+-#~ msgstr "Niższe bitrate nie ustawione\n"
+-
+-#~ msgid "Negative or zero granulepos (%"
+-#~ msgstr "Ujemna lub zerowa granulepos (%"
+-
+-#~ msgid ""
+-#~ "Vorbis stream %d:\n"
+-#~ "\tTotal data length: %"
+-#~ msgstr ""
+-#~ "Strumień Vorbis %d:\n"
+-#~ "\tCałkowita długość danych: %"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Could not decode Kate header packet %d - invalid Kate stream "
+-#~ "(%d)\n"
+-#~ msgstr ""
+-#~ "UWAGA: nie udało się zdekodować pakietu nagłówka Kate %d - błędny "
+-#~ "strumień Kate (%d)\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: packet %d does not seem to be a Kate header - invalid Kate "
+-#~ "stream (%d)\n"
+-#~ msgstr ""
+-#~ "UWAGA: pakiet %d nie wygląda na nagłówek Kate - błędny strumień Kate "
+-#~ "(%d)\n"
+-
+-#, c-format
+-#~ msgid ""
+-#~ "WARNING: Kate stream %d does not have headers correctly framed. Terminal "
+-#~ "header page contains additional packets or has non-zero granulepos\n"
+-#~ msgstr ""
+-#~ "UWAGA: strumień Kate %d nie ma właściwych ramek nagłówków. Końcowa strona "
+-#~ "nagłówka zawiera dodatkowe pakiety lub ma niezerową granulepos\n"
+-
+-#, c-format
+-#~ msgid "Kate headers parsed for stream %d, information follows...\n"
+-#~ msgstr ""
+-#~ "Przeanalizowano nagłówki Kate dla strumienia %d, informacje poniżej...\n"
+-
+-#, c-format
+-#~ msgid "Version: %d.%d\n"
+-#~ msgstr "Wersja: %d.%d\n"
+-
+-#, c-format
+-#~ msgid "Language: %s\n"
+-#~ msgstr "Język: %s\n"
+-
+-#~ msgid "No language set\n"
+-#~ msgstr "Brak ustawionego języka\n"
+-
+-#, c-format
+-#~ msgid "Category: %s\n"
+-#~ msgstr "Kategoria: %s\n"
+-
+-#~ msgid "No category set\n"
+-#~ msgstr "Brak ustawionej kategorii\n"
+-
+-#~ msgid "utf-8"
+-#~ msgstr "utf-8"
+-
+-#, c-format
+-#~ msgid "Character encoding: %s\n"
+-#~ msgstr "Kodowanie znaków: %s\n"
+-
+-#~ msgid "Unknown character encoding\n"
+-#~ msgstr "Nieznane kodowanie znaków\n"
+-
+-#~ msgid "left to right, top to bottom"
+-#~ msgstr "od lewej do prawej, od góry do dołu"
+-
+-#~ msgid "right to left, top to bottom"
+-#~ msgstr "od prawej do lewej, od góry do dołu"
+-
+-#~ msgid "top to bottom, right to left"
+-#~ msgstr "od góry do dołu, od prawej do lewej"
+-
+-#~ msgid "top to bottom, left to right"
+-#~ msgstr "od góry do dołu, od lewej do prawej"
+-
+-#, c-format
+-#~ msgid "Text directionality: %s\n"
+-#~ msgstr "Kierunek tekstu: %s\n"
+-
+-#~ msgid "Unknown text directionality\n"
+-#~ msgstr "Nieznany kierunek tekstu\n"
+-
+-#~ msgid "Invalid zero granulepos rate\n"
+-#~ msgstr "Błędna zerowa częstotliwość granulepos\n"
+-
+-#, c-format
+-#~ msgid "Granulepos rate %d/%d (%.02f gps)\n"
+-#~ msgstr "Częstotliwość granulepos %d/%d (%.02f gps)\n"
+-
+-#~ msgid "\n"
+-#~ msgstr "\n"
+-
+-#~ msgid "Negative granulepos (%"
+-#~ msgstr "Ujemna granulepos (%"
+-
+-#~ msgid ""
+-#~ "Kate stream %d:\n"
+-#~ "\tTotal data length: %"
+-#~ msgstr ""
+-#~ "Strumień Kate %d:\n"
+-#~ "\tCałkowita długość danych: %"

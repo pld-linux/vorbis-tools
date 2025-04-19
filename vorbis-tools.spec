@@ -3,18 +3,17 @@ Summary(es.UTF-8):	Utensilios Ogg Vorbis
 Summary(pl.UTF-8):	Narzędzia do obsługi plików w formacie Ogg Vorbis
 Summary(pt_BR.UTF-8):	Ferramentas Ogg Vorbis
 Name:		vorbis-tools
-Version:	1.4.2
-Release:	4
+Version:	1.4.3
+Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		Development/Libraries
 Source0:	https://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.gz
-# Source0-md5:	998fca293bd4e4bdc2b96fb70f952f4e
+# Source0-md5:	2057a2f8778d4913ceb169268abf23d4
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-nolibnsl.patch
 Patch2:		%{name}-gettext.patch
 Patch3:		%{name}-pl.po-update.patch
-Patch4:		includes.patch
 URL:		https://xiph.org/vorbis/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -56,7 +55,11 @@ de alta qualidade.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
-%patch -P4 -p1
+
+%{__rm} po/stamp-po
+
+# current gettext expect languages in po/LINGUAS, not in configure
+%{__sed} -ne '/^ALL_LINGUAS/ { s/.*="//; s/"$//; p }' configure.ac > po/LINGUAS
 
 %build
 %{__gettextize}
@@ -76,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # packaged as %doc
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %find_lang %{name}
 
